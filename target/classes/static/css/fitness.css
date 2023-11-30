@@ -1,0 +1,42 @@
+         body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #4B0082;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        h3 {
+            font-size: 18px;
+        }
+        p {
+            color: #333;
+        }
+        a {
+            color: #4B0082;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .header {
+            padding: 20px;
+            text-align: center;
+            background: #EEE;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4B0082;
+            color: #FFF;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #34005C;
+        }
