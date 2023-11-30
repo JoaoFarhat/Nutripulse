@@ -1,0 +1,38 @@
+.formulario{
+    color: white;
+    width: 400px;
+    height: 900px;
+    background-color:#00e961;
+    border-radius: 40px;
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 37%;
+    margin-bottom: 50px;
+    align-items: center;
+    font-size: 20px;
+    padding: 20px;
+    display: grid;
+    color: #303030;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+label{
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+input{
+    outline: none;
+    background-color: white;
+    border: none;
+    padding: 13px;
+    border-radius: 30px;
+    width: 300px;
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
