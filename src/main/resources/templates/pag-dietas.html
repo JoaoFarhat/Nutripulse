@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dietas</title>
+</head>
+<body>
+<div class="card" th:each="dietas : ${listaDietas}">
+  <a th:href="@{/lista-dietas/{id}(id=${dietas.id})}">
+    <img src="/static/img/dieta.jpg" alt="Imagem 1">
+  </a>
+  <p th:text="${dietas.caso}"></p>
+  <td>
+    <form th:action="@{/lista-dietas/{id}(id=${dietas.id})}" method="get">
+      <input type="hidden" name="id" th:value="${dietas.id}" />
+      <button id="detalhe" type="submit">Detalhes</button>
+    </form>
+  </td>
+  </div>
+
+</body>
+</html>

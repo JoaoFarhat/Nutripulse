@@ -1,4 +1,4 @@
-package com.senac.Nutripulse.Controller;
+package com.senac.Nutripulse.API;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.senac.Nutripulse.Controller;
+package com.senac.Nutripulse.API;
 
 import com.senac.Nutripulse.DTO.Request.ExerciciosRequestDTO;
 import com.senac.Nutripulse.DTO.Response.ExerciciosResponseDTO;

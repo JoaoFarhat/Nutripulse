@@ -40,6 +40,7 @@ public class TokenService {
                     .withIssuer("dice & rise")
                     .build()
                     .verify(token)
+             //       .getClaim("role").asString()
                     .getSubject();
 
         }catch (JWTVerificationException e){

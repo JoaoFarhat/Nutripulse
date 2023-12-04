@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.senac.Nutripulse.Entity.Aliments;
 
+import java.util.List;
+
 @Repository
 public interface AlimentsRepository extends JpaRepository<Aliments, Integer> {
 
+    List<Aliments> findByDieta_id(Integer idDieta);
 }

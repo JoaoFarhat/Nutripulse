@@ -117,4 +117,12 @@ public class AlimentsService {
         }
         return alimentosMapper.toResponseDto(alimento);
     }
+
+    public List<AlimentsResponseDTO> listarAlimentosPorDieta(Integer idDieta) {
+        List<Aliments> aliments = alimentosRepository.findByDieta_id(idDieta);
+
+        return aliments.stream()
+                .map(alimentosMapper::toResponseDto)
+                .collect(Collectors.toList());
+    }
 }

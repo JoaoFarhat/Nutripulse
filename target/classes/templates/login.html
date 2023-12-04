@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -44,13 +44,13 @@
 
     <div class="formulario">
       <form th:action="@{/login}" th:object="${users}" id="userForm" class="form" method="post" enctype="multipart/form-data">
-        <label class="label-input" for="">
+        <label class="label-input" for="email">
             <i class="far fa-envelope icon-modify"></i>
-            <input type="email" placeholder="E-mail" th:field="*{email}" required>
+            <input type="email" id="email" placeholder="E-mail" th:field="*{email}" required>
         </label>
-        <label class="label-input" for="">
+        <label class="label-input" for="senha">
             <i class="fas fa-lock icon-modify"></i>
-            <input type="password" placeholder="Senha" th:field="*{senha}" required>
+            <input type="password" id="senha" placeholder="Senha" th:field="*{senha}" required>
         </label>
         <button type="submit" class="btn btn-second">Inscrever-se</button>        
     </form>

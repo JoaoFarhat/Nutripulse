@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-cards">
+    <div class="card">
+        <div class="colunas">
+            <div class="coluna1">
+                <img src="../static/img/dieta.jpg" alt="Imagem 1" class="imgdieta"><br>
+                <div class="text_campanha"><br>
+                    <h1 th:text="${dietas.caso}"></h1><br>
+                    <p class="dieta_descricao" th:text="${dietas.descricao}"></p>
+                </div>
+            </div>
+            <div class="coluna2">
+                <h2 class="titulo_participantes">Alimentos da Dieta</h2>
+                <div class="lista_participantes" th:each="alimento : ${alimentos}">
+                    <!-- Exibir informações sobre cada participante -->
+                    <div class="infos_participante">
+                        <h3 class="nome_alimento" th:text="${alimento.nome}"></h3>
+                        <h5 class="calorias_alimento" th:text="${alimento.calorias}"></h5>
+                        <h5 class="calorias_alimento" th:text="${alimento.proteinas}"></h5>
+                        <h5 class="calorias_alimento" th:text="${alimento.carboidratos}"></h5>
+                        <h5 class="calorias_alimento" th:text="${alimento.gorduras}"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

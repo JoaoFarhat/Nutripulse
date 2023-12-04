@@ -3,6 +3,7 @@ package com.senac.Nutripulse.DTO.Response;
 import java.util.List;
 
 import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
+import com.senac.Nutripulse.Entity.Aliments;
 import com.senac.Nutripulse.Enums.Caso;
 
 import jakarta.validation.constraints.NotNull;

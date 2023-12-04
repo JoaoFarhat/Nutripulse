@@ -19,7 +19,7 @@ import com.senac.Nutripulse.Service.UsersService;
 
 @Controller
 @RequestMapping("/cadastro")
-public class CadastroController {
+public class CadastroUsuarioController {
 
     @Autowired
     private UsersService usersService;
