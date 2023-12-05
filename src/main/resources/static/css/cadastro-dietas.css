@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    text-align: center;
+}
+
+.cont1{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+}
+
+.radio{
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+}
+
+.radio input, label{
+    display: flex;
+    justify-content: center;
+}
+
+.descricao{
+    display: flex;
+    flex-direction: column;
+}
+
+.descricao input {
+    margin-bottom: 20px;
+    padding: 10px;  
+}
+
+.alimentos{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.alimento input{
+    padding: 10px;
+    margin: 5px;
+}
+
+.submit{
+    background:  rgb(25, 199, 25);
+    color: white;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: none;
+    border-radius: 10px;
+    border: none;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+    <link th:href="@{/css/detalhes-dietas-adm.css}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img th:src="@{/img/logo.png}" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="nav-item">Dietas</span></a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span class="nav-item">Treinos</span></a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="nav-item">Administradores</span></a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="nav-item">Logout</span></a>
+            </li>
+        </ul>
+    </nav>
+  </header>
+<body>
+<div class="container-cards">
+    <div class="card">
+        <div class="colunas">
+            <div class="coluna1">
+                <a href="/adm/dietas">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                  </a>
+                <div class="text_dietas"><br>
+                    <h1 th:text="${dietas.nome}"></h1><br>
+                    <h1 th:text="${dietas.caso}"></h1><br>
+                    <h3 th:text="'Descrição:'"></h3><p class="dieta_descricao" th:text="${dietas.descricao}"></p>
+                </div>
+            </div>
+            <div class="coluna2">
+                <h2 class="titulo_alimentos">Alimentos da Dieta</h2>
+                <div class="container">
+                    <div class="lista_alimentos" th:each="alimento : ${alimentos}">
+                        <div class="infos_alimentos">
+                            <h3 class="nome_alimento" th:text="${alimento.nome}"></h3><br>
+                            <span th:text="'Carboidratos:'"></span> <h5 class="calorias_alimento" th:text="${alimento.carboidratos}"></h5><br>
+                            <span th:text="'Proteínas:'"></span> <h5 class="proteinas_alimento" th:text="${alimento.proteinas}"></h5><br>
+                            <span th:text="'Gorduras:'"></span> <h5 class="gorduras_alimento" th:text="${alimento.gorduras}"></h5><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="but">
+                    <a th:href="@{/adm/alimento/criar/{id}(id=${dietas.id})}"><button id="adicionarCard" class="botao-adicionar">Criar Nova Alimento Para Esta Dieta</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

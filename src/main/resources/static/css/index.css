@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #dfe9f5;
+}
+
+.container {
+    display: flex;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    background: #fff;
+    width: 90px;
+    overflow: hidden;
+    transition: widht 0.2 linear;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+
+.logo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+}
+
+nav a{
+    position: relative;
+    color: green;
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+nav i{
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item{
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+nav a:hover{
+    background: #eee;
+}
+
+nav:hover{
+    width: 20%;
+    transition: all 0.5s ease;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+.card{
+    width: 60%;
+    padding-left: 10%;
+    padding-top: 3%;
+}
+
+.but{
+    display: flex;
+    justify-content: end;
+}
+.botao-adicionar{
+    width: 300px;
+    background-color: rgb(25, 199, 25);
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+.detalhes, .remover, .editar, .adicionar{
+    width: 150px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.detalhes, .adicionar{
+    background:  rgb(25, 199, 25);
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: none;
+    border-radius: 10px;
+}
+
+.editar{
+    background:  rgb(187, 199, 25);
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: none;
+    border-radius: 10px;
+}
+
+.remover{
+    background: red;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: none;
+    border-radius: 10px;
+}
+
+td, th {
+    padding-left: 30px;
+}
+
+a{
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+
+
+
+

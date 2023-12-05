@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form th:action="@{/adm/alimento/criar/{id}}"  method="post">
+    <input type="text" id="nome" name="nome" placeholder="Nome do alimento"
+           class="form-control"/>
+    <input type="number" id="calorias" name="calorias" placeholder="Calorias"
+           class="form-control"/>
+    <input type="number" id="proteinas" name="proteinas" placeholder="Proteínas"
+           class="form-control"/>
+    <input type="number" id="carboidratos" name="carboidratos" placeholder="Carboidratos"
+           class="form-control"/>
+    <input type="number" id="gorduras" name="gorduras" placeholder="Gorduras"
+           class="form-control"/>
+    <input type="number" id="id" name="id" placeholder="id"
+           class="form-control"/>
+    <button type="submit" class="add">Enviar</button>
+  </form>
+
+</body>
+</html>

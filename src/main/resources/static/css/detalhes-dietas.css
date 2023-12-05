@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.infos_alimentos h3{
+    color: black;
+}
+
+.coluna1 {
+    display: flex;
+    justify-content: center;
+    padding-right: 200px;
+    margin-top: 5vh;
+}
+
+.text_dietas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coluna1 img{
+    margin-right: 100px;
+}
+
+.coluna2{
+    margin: 10px;
+}
+
+.imgdieta {
+    width: 300px;
+    border-radius: 50%;
+  }
+
+.container {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 20px;
+    margin-right: 10vw;
+    margin-left: 10vw;
+    width: 80vw;
+    flex-wrap: wrap;
+}
+
+.lista_alimentos{
+    margin: 20px;
+}
+
+.coluna2 h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a.voltar i {
+    margin-right: 10px;
+  }
+  
