@@ -13,6 +13,9 @@ public class DietasRequestDTO {
     
     private Integer id;
 
+    @NotNull(message = "O campo 'nome' não pode estar vazio")
+    private String nome;
+
     @NotNull(message = "O campo 'descricao' não pode estar vazio")
     @Size(max = 3000, message = "O campo 'descricao' deve ter no máximo 3000 caracteres")
     private String descricao;

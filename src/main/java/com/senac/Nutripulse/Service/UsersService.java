@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 import com.senac.Nutripulse.DTO.Request.UsersRequestDTO;
 import com.senac.Nutripulse.DTO.Response.UsersResponseDTO;
-import com.senac.Nutripulse.Entity.Users;
 import com.senac.Nutripulse.Enums.Role;
 import com.senac.Nutripulse.Mapper.UsersMapper;
+import com.senac.Nutripulse.Model.Users;
 import com.senac.Nutripulse.Repository.UsersRepository;
 
 import jakarta.persistence.EntityNotFoundException;

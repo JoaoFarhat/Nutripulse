@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
 import com.senac.Nutripulse.DTO.Response.AlimentsResponseDTO;
-import com.senac.Nutripulse.Entity.Aliments;
+import com.senac.Nutripulse.Model.Aliments;
 
 @Component
 public class AlimentsMapper {

@@ -10,12 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import java.util.List;
 
 @Controller
-@RequestMapping("lista-dietas")
-public class PagDietasController {
+@RequestMapping("/adm/dietas")
+public class PagDietaAdm {
     @Autowired
     private AlimentsService alimentsService;
 
@@ -26,16 +25,21 @@ public class PagDietasController {
     public String listarDietas(Model model){
         List<DietasResponseDTO> listaDietas = dietaService.listarDietasResponse();
         model.addAttribute("listaDietas", listaDietas);
-        return "pag-dietas";
+        return "dietas";
     }
 
-    @GetMapping("/{id}")
-    public String detalhesDieta(@PathVariable Integer id, Model model) {
+    @GetMapping("/detalhes/{id}")
+    public String detalhesDieta(@PathVariable("id") final Integer id, Model model) {
         DietasResponseDTO dietasResponseDTO = dietaService.obterDietaPorIdResponse(id);
         List<AlimentsResponseDTO> aliments = alimentsService.listarAlimentosPorDieta(id);
         model.addAttribute("dietas", dietasResponseDTO);
         model.addAttribute("alimentos", aliments);
-        return "detalhes-dietas";
+        return "detalhes-dietas-adm";
     }
 
+    @GetMapping("/deletar/{id}")
+    public String excluirDieta(@PathVariable("id") final Integer id) {
+        dietaService.excluirDieta(id);
+        return "redirect:/adm/dietas";
+    }
 }

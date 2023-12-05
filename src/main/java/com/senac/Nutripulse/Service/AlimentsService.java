@@ -2,9 +2,9 @@ package com.senac.Nutripulse.Service;
 
 import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
 import com.senac.Nutripulse.DTO.Response.AlimentsResponseDTO;
-import com.senac.Nutripulse.Entity.Aliments;
-import com.senac.Nutripulse.Entity.Dietas;
 import com.senac.Nutripulse.Mapper.AlimentsMapper;
+import com.senac.Nutripulse.Model.Aliments;
+import com.senac.Nutripulse.Model.Dietas;
 import com.senac.Nutripulse.Repository.AlimentsRepository;
 import com.senac.Nutripulse.Repository.DietaRepository;
 import jakarta.persistence.EntityNotFoundException;

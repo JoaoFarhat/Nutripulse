@@ -2,7 +2,8 @@ package com.senac.Nutripulse.Mapper;
 
 import com.senac.Nutripulse.DTO.Request.ExerciciosRequestDTO;
 import com.senac.Nutripulse.DTO.Response.ExerciciosResponseDTO;
-import com.senac.Nutripulse.Entity.Exercicios;
+import com.senac.Nutripulse.Model.Exercicios;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

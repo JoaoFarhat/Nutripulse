@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" th:href="@{/css/cadastro-dietas.css}">
+</head>
+<body>
+    <div class="container">   
+        <form th:action="@{/adm/criacao-dietas}" method="post">
+            <div class="cont1">
+                <div class="radio">
+                    <input type="radio" id="EMAGRECER" name="caso" value="EMAGRECER">
+                    <label for="EMAGRECER">EMAGRECER</label><br>
+                    <input type="radio" id="ENGORDAR" name="caso" value="ENGORDAR">
+                    <label for="ENGORDAR">ENGORDAR</label><br>
+                    <input type="radio" id="DEFINIR" name="caso" value="DEFINIR ">
+                    <label for="DEFINIR">DEFINIR</label><br>
+                </div>
+                <div class="descricao">
+                    <input type="text" name="nome" placeholder="Nome da dieta">
+                    <textarea name="descricao" id="descricao" placeholder="Descrição da dieta" cols="30" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="alimentos">
+        <div class="alimento">
+            <input type="text" name="alimentos[0].nome" placeholder="Nome do alimento">
+            <input type="number" name="alimentos[0].calorias" placeholder="Calorias">
+            <input type="number" name="alimentos[0].proteinas" placeholder="Proteínas">
+            <input type="number" name="alimentos[0].carboidratos" placeholder="Carboidratos">
+            <input type="number" name="alimentos[0].gorduras" placeholder="Gorduras">
+        </div>
+        <div class="alimento">
+            <input type="text" name="alimentos[1].nome" placeholder="Nome do alimento">
+            <input type="number" name="alimentos[1].calorias" placeholder="Calorias">
+            <input type="number" name="alimentos[1].proteinas" placeholder="Proteínas">
+            <input type="number" name="alimentos[1].carboidratos" placeholder="Carboidratos">
+            <input type="number" name="alimentos[1].gorduras" placeholder="Gorduras">
+        </div>
+        <div class="alimento">
+            <input type="text" name="alimentos[2].nome" placeholder="Nome do alimento">
+            <input type="number" name="alimentos[2].calorias" placeholder="Calorias">
+            <input type="number" name="alimentos[2].proteinas" placeholder="Proteínas">
+            <input type="number" name="alimentos[2].carboidratos" placeholder="Carboidratos">
+            <input type="number" name="alimentos[2].gorduras" placeholder="Gorduras">
+        </div>
+    </div>
+    <div class="but">
+        <button type="submit" class="submit" value="Criar Dieta">Salvar</button>
+    </div>
+</form>
+</div>
+
+</body>
+</html>

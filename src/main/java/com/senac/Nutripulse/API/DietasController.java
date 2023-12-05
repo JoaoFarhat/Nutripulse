@@ -2,68 +2,30 @@ package com.senac.Nutripulse.API;
 
 import java.util.List;
 
-import com.senac.Nutripulse.Service.AlimentsService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
 import com.senac.Nutripulse.DTO.Request.DietasRequestDTO;
 import com.senac.Nutripulse.DTO.Response.DietasResponseDTO;
-import com.senac.Nutripulse.Entity.Aliments;
-import com.senac.Nutripulse.Entity.Dietas;
-import com.senac.Nutripulse.Mapper.DietasMapper;
-import com.senac.Nutripulse.Repository.DietaRepository;
 import com.senac.Nutripulse.Service.DietaService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 @RestController
-@RequestMapping("/dietas")
+@RequestMapping("/api/dietas")
 public class DietasController {
 
-    private final DietaRepository dietasRepository;
-
-    private final DietaService dietaService;
-
-    private final DietasMapper dietaMapper;
-
-
-    public DietasController(DietaRepository dietasRepository, DietaService dietasService, DietasMapper dietasMapper, AlimentsService alimentsService) {
-        this.dietasRepository = dietasRepository;
-        this.dietaMapper = dietasMapper;
-        this.dietaService = dietasService;
-    }
+    @Autowired
+    private DietaService dietaService;
 
     @PostMapping("/criar")
     public ResponseEntity<DietasResponseDTO> criarDieta(@RequestBody DietasRequestDTO dietasRequestDTO) {
 
-        // Valida se a dieta tem pelo menos 3 alimentos
-        if (dietasRequestDTO.getAlimentos().size() < 3) {
-            throw new IllegalArgumentException("A dieta deve ter pelo menos 3 alimentos");
-        }
-
-        // Cria uma nova dieta
-        Dietas dietas = new Dietas();
-        dietas.setCaso(dietasRequestDTO.getCaso());
-        dietas.setDescricao(dietasRequestDTO.getDescricao());
-
-        // Cria os alimentos da dieta
-        for (AlimentsRequestDTO alimentosRequestDTO : dietasRequestDTO.getAlimentos()) {
-            Aliments alimentos = new Aliments();
-            alimentos.setNome(alimentosRequestDTO.getNome());
-            alimentos.setCalorias(alimentosRequestDTO.getCalorias());
-            alimentos.setProteinas(alimentosRequestDTO.getProteinas());
-            alimentos.setCarboidratos(alimentosRequestDTO.getCarboidratos());
-            alimentos.setGorduras(alimentosRequestDTO.getGorduras());
-            alimentos.setDieta(dietas);
-            dietas.getAlimentos().add(alimentos);
-        }
-
-        // Salva a dieta
-        dietasRepository.save(dietas);
+        DietasResponseDTO dietas = dietaService.criarDieta(dietasRequestDTO);
 
         // Retorna a dieta criada
-        return ResponseEntity.status(HttpStatus.CREATED).body(dietaMapper.toResponseDto(dietas));
+        return ResponseEntity.status(HttpStatus.CREATED).body(dietas);
     }
 
     @GetMapping("/listar")
@@ -81,19 +43,10 @@ public class DietasController {
     public ResponseEntity<DietasResponseDTO> atualizarDieta(@PathVariable Integer id,
                                                             @RequestBody DietasRequestDTO dietasRequestDTO) {
 
-        // Encontra a dieta
-        Dietas dietas = dietasRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Dieta não encontrada"));
-
-        // Atualiza os atributos da dieta
-        dietas.setCaso(dietasRequestDTO.getCaso());
-        dietas.setDescricao(dietasRequestDTO.getDescricao());
-
-        // Salva a dieta
-        dietasRepository.save(dietas);
+        DietasResponseDTO dietas = dietaService.atualizarDieta(dietasRequestDTO);
 
         // Retorna a dieta atualizada
-        return ResponseEntity.status(HttpStatus.OK).body(dietaMapper.toResponseDto(dietas));
+        return ResponseEntity.status(HttpStatus.OK).body(dietas);
     }
 
 

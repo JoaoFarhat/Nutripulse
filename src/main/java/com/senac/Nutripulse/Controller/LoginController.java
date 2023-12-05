@@ -1,8 +1,7 @@
 package com.senac.Nutripulse.Controller;
 
+import com.senac.Nutripulse.Model.Users;
 import com.senac.Nutripulse.Repository.UsersRepository;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -20,7 +19,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.senac.Nutripulse.DTO.AuthenticationDTO;
 import com.senac.Nutripulse.DTO.Request.UsersRequestDTO;
 import com.senac.Nutripulse.DTO.Response.LoginResponseDTO;
-import com.senac.Nutripulse.Entity.Users;
 import com.senac.Nutripulse.Security.TokenService;
 
 import java.util.Set;
@@ -28,13 +26,10 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/login")
-public class LoginUsuarioController {
+public class LoginController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private HttpServletRequest request;
 
     @Autowired
     private
@@ -67,26 +62,19 @@ public class LoginUsuarioController {
 
         new LoginResponseDTO(token);
 
-        HttpSession session = request.getSession(true);
-        session.setAttribute("loggedInUser", dto.email());
-
         UserDetails users = usersRepository.findByEmail(dto.email());
         Set<String> authorities = users.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
 
-
         if (authorities.contains("ROLE_ADMIN")) {
             // Redireciona para a rota dos administradores
-            return new ModelAndView("redirect:/lista-dietas");
+            ModelAndView modelAndView = new ModelAndView("redirect:/adm/criacao-dietas");
+            return modelAndView;
         } else if ((authorities.contains("ROLE_USER"))){
             // Redireciona para a rota dos usuários comuns
             return new ModelAndView("redirect:/");
         } else {
             return new ModelAndView("redirect:/login");
         }
-
-
-
-        //return new ModelAndView("redirect:/");
     }
     
 }

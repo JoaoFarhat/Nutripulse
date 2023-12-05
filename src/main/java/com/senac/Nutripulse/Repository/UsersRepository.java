@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
-import com.senac.Nutripulse.Entity.Users;
+import com.senac.Nutripulse.Model.Users;
 
 //Não pude utilizar crud repository pois foi necessario utilizar os recursos do JPA Repositoy
 @Repository

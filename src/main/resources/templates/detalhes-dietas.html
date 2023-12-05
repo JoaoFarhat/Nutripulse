@@ -3,28 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="..\css\detalhes-dietas.css">
+    <link rel="stylesheet" href="..\css\style.css">
 </head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <a class="navbar-brand" href="\"><img src="../img/logo.png" class="logo" alt="Logotipo"></a>
+      <div class="container-fluid">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-dietas">Dietas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-treinos">Treinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link-button" href="/login"> <button type="button" class="nav-link-button"> <i
+                    class="fas fa-user"></i> | Login</button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 <body>
 <div class="container-cards">
     <div class="card">
         <div class="colunas">
             <div class="coluna1">
-                <img src="../static/img/dieta.jpg" alt="Imagem 1" class="imgdieta"><br>
-                <div class="text_campanha"><br>
+                <a href="/lista-dietas">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                  </a>
+                <img src="../img/dieta.jpg" alt="Imagem 1" class="imgdieta"><br>
+                <div class="text_dietas"><br>
+                    <h1 th:text="${dietas.nome}"></h1><br>
                     <h1 th:text="${dietas.caso}"></h1><br>
                     <p class="dieta_descricao" th:text="${dietas.descricao}"></p>
                 </div>
             </div>
             <div class="coluna2">
-                <h2 class="titulo_participantes">Alimentos da Dieta</h2>
-                <div class="lista_participantes" th:each="alimento : ${alimentos}">
-                    <!-- Exibir informações sobre cada participante -->
-                    <div class="infos_participante">
-                        <h3 class="nome_alimento" th:text="${alimento.nome}"></h3>
-                        <h5 class="calorias_alimento" th:text="${alimento.calorias}"></h5>
-                        <h5 class="calorias_alimento" th:text="${alimento.proteinas}"></h5>
-                        <h5 class="calorias_alimento" th:text="${alimento.carboidratos}"></h5>
-                        <h5 class="calorias_alimento" th:text="${alimento.gorduras}"></h5>
+                <h2 class="titulo_alimentos">Alimentos da Dieta</h2>
+                <div class="container">
+                    <div class="lista_alimentos" th:each="alimento : ${alimentos}">
+                        <div class="infos_alimentos">
+                            <h3 class="nome_alimento" th:text="${alimento.nome}"></h3><br>
+                            <span th:text="'Carboidratos:'"></span> <h5 class="calorias_alimento" th:text="${alimento.carboidratos}"></h5><br>
+                            <span th:text="'Proteínas:'"></span> <h5 class="proteinas_alimento" th:text="${alimento.proteinas}"></h5><br>
+                            <span th:text="'Gorduras:'"></span> <h5 class="gorduras_alimento" th:text="${alimento.gorduras}"></h5><br>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.senac.Nutripulse.Entity.Users;
+import com.senac.Nutripulse.Model.Users;
 
 @Service
 public class TokenService {
@@ -23,7 +23,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             String token = JWT.create()
-                            .withIssuer("dice & rise")
+                            .withIssuer("nutripulse")
                             .withSubject(users.getEmail())
                             .withExpiresAt(genExpirationDate())
                             .sign(algorithm);
@@ -37,7 +37,7 @@ public class TokenService {
         try{
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
-                    .withIssuer("dice & rise")
+                    .withIssuer("nutripulse")
                     .build()
                     .verify(token)
              //       .getClaim("role").asString()

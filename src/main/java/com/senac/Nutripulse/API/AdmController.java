@@ -3,11 +3,9 @@ package com.senac.Nutripulse.API;
 import com.senac.Nutripulse.DTO.AuthenticationDTO;
 import com.senac.Nutripulse.DTO.RegistroDTO;
 import com.senac.Nutripulse.DTO.Response.LoginResponseDTO;
-import com.senac.Nutripulse.Entity.Users;
+import com.senac.Nutripulse.Model.Users;
 import com.senac.Nutripulse.Repository.UsersRepository;
 import com.senac.Nutripulse.Security.TokenService;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,14 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/auth")
 public class AdmController {
-
-    @Autowired
-    private HttpServletRequest request;
 
     @Autowired
     private UsersRepository usersRepository;

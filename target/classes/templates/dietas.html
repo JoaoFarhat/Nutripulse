@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img src="..\img\logo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="/adm/dietas">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="nav-item">Dietas</span></a>
+            </li>
+            <li>
+                <a href="/lista-treinos">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span class="nav-item">Treinos</span></a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="nav-item">Administradores</span></a>
+            </li>
+            <li>
+                <a href="#" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="nav-item">Logout</span></a>
+            </li>
+        </ul>
+    </nav>
+<div class="card">
+    <a href="/lista-dietas"></a>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Caso</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr th:each="dietas : ${listaDietas}">
+            <td th:text="${dietas.id}"></td>
+            <td th:text="${dietas.nome}"></td>
+            <td th:text="${dietas.caso}"></td>
+            <td>
+                <a class="detalhes" href="btn btn-info btn-sm" th:href="@{/adm/dietas/detalhes/{id}(id=${dietas.id})}">Detalhes</a>
+            </td>
+            <td>
+                <a class="editar" href="btn btn-warning btn-sm" th:href="@{/adm/dietas/{id}(id=${dietas.id})}">Editar</a>
+            </td>
+            <td>
+                <a class="remover" href="btn btn-remove btn-sm" th:href="@{/adm/dietas/deletar/{id}(id=${dietas.id})}">Remover</a>
+            </td>
+            <td>
+                <a class="adicionar" href="btn btn-remove btn-sm" th:href="@{/adm/alimento/criar/{id}(id=${dietas.id})}">Criar Alimento</a>
+            </td>
+
+        </tr>
+        
+    </table>
+    <div class="but">
+
+        <a href="/adm/criacao-dietas"><button id="adicionarCard" class="botao-adicionar">Criar Nova Dieta</button></a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

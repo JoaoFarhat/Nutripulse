@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.senac.Nutripulse.DTO.Request.DietasRequestDTO;
 import com.senac.Nutripulse.DTO.Response.DietasResponseDTO;
-import com.senac.Nutripulse.Entity.Dietas;
+import com.senac.Nutripulse.Model.Dietas;
 
 @Component
 public class DietasMapper {
@@ -18,8 +18,8 @@ public class DietasMapper {
         return modelMapper.map(dieta, DietasResponseDTO.class);
     }
 
-    public DietasRequestDTO toRequestDto(Dietas campanhaModel) {
-        return modelMapper.map(campanhaModel, DietasRequestDTO.class);
+    public DietasRequestDTO toRequestDto(Dietas dieta) {
+        return modelMapper.map(dieta, DietasRequestDTO.class);
     }
 
     public Dietas toEntity(DietasRequestDTO dietasRequestDto) {

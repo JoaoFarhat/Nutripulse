@@ -28,9 +28,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers(HttpMethod.POST, "/dietas").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/dietas/criar").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/dietas/{id}").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/dietas/{id}").hasRole("ADMIN")
+
+//                .requestMatchers(HttpMethod.POST, "/adm/criacao-dietas").hasRole("ADMIN")
+//                .requestMatchers(HttpMethod.GET, "/adm/criacao-dietas").hasRole("ADMIN")
+//                .requestMatchers(HttpMethod.GET, "/adm/dietas").hasRole("ADMIN")
 
                 .requestMatchers(HttpMethod.POST, "/alimentos").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/alimentos/{id}").hasRole("ADMIN")
@@ -45,7 +49,7 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.PUT, "/treinos/{id}").hasRole("ADMIN")
 
                 .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                .requestMatchers(HttpMethod.POST, "/auth/cadastro").hasRole(("ADMIN"))
+                .requestMatchers(HttpMethod.POST, "/auth/cadastro").permitAll()//.hasRole(("ADMIN"))
                         .anyRequest().permitAll()
                  )
                  .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

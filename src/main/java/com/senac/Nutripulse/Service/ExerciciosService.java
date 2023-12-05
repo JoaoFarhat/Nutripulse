@@ -2,9 +2,9 @@ package com.senac.Nutripulse.Service;
 
 import com.senac.Nutripulse.DTO.Request.ExerciciosRequestDTO;
 import com.senac.Nutripulse.DTO.Response.ExerciciosResponseDTO;
-import com.senac.Nutripulse.Entity.Exercicios;
-import com.senac.Nutripulse.Entity.Treinos;
 import com.senac.Nutripulse.Mapper.ExerciciosMapper;
+import com.senac.Nutripulse.Model.Exercicios;
+import com.senac.Nutripulse.Model.Treinos;
 import com.senac.Nutripulse.Repository.ExerciciosRepository;
 import com.senac.Nutripulse.Repository.TreinosRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -114,5 +114,13 @@ public class ExerciciosService {
             throw new EntityNotFoundException("Nenhum usuário encontrado para o ID fornecido.");
         }
         return exerciciosMapper.toResponseDto(alimento);
+    }
+
+    public List<ExerciciosResponseDTO> listarExerciciosPorTreinos(Integer idTreino) {
+        List<Exercicios> treinos = exerciciosRepository.findByTreino_id(idTreino);
+
+        return treinos.stream()
+                .map(exerciciosMapper::toResponseDto)
+                .collect(Collectors.toList());
     }
 }

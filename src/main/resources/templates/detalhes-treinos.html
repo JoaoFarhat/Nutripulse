@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-cards">
+    <div class="card">
+        <div class="colunas">
+            <div class="coluna1">
+                <img src="../static/img/treino.jpg" alt="Imagem 1" class="imgtreino"><br>
+                <div class="text_treinos"><br>
+                    <h1 th:text="${treinos.modo}"></h1><br>
+                    <p class="treinos_descricao" th:text="${treinos.descricao}"></p>
+                </div>
+            </div>
+            <div class="coluna2">
+                <h2 class="titulo_exercicios">Exercicios do Treino</h2>
+                <div class="lista_exercicios" th:each="exercicio : ${exercicios}">
+                    <div class="infos_exercicios">
+                        <h3 class="nome_exercicio" th:text="${exercicio.nome}"></h3>
+                        <h5 class="descricao_exercicio" th:text="${exercicio.descricao}"></h5>
+                        <h5 class="repeticoes_exercicio" th:text="${exercicio.repeticoes}"></h5>
+                        <h5 class="series_exercicio" th:text="${exercicio.series}"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

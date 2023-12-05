@@ -6,7 +6,7 @@ import org.springframework.stereotype.*;
 
 import com.senac.Nutripulse.DTO.Request.UsersRequestDTO;
 import com.senac.Nutripulse.DTO.Response.UsersResponseDTO;
-import com.senac.Nutripulse.Entity.Users;
+import com.senac.Nutripulse.Model.Users;
 
 @Component
 public class UsersMapper {

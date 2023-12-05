@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
 import com.senac.Nutripulse.DTO.Request.DietasRequestDTO;
 import com.senac.Nutripulse.DTO.Response.DietasResponseDTO;
-import com.senac.Nutripulse.Entity.Aliments;
-import com.senac.Nutripulse.Entity.Dietas;
 import com.senac.Nutripulse.Mapper.DietasMapper;
+import com.senac.Nutripulse.Model.Aliments;
+import com.senac.Nutripulse.Model.Dietas;
 import com.senac.Nutripulse.Repository.DietaRepository;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -57,6 +57,7 @@ public class DietaService {
 
         // Cria uma nova dieta
         Dietas dietas = new Dietas();
+        dietas.setNome(dietasRequestDTO.getNome());
         dietas.setCaso(dietasRequestDTO.getCaso());
         dietas.setDescricao(dietasRequestDTO.getDescricao());
 
