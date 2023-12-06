@@ -10,7 +10,6 @@ import com.senac.Nutripulse.Repository.DietaRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,13 +27,13 @@ public class AlimentsService {
     @Autowired
     private DietaRepository dietaRepository;
 
-    public AlimentsResponseDTO criarAlimento(AlimentsRequestDTO alimentosRequestDTO, @RequestParam Integer id) {
+    public AlimentsResponseDTO criarAlimento(AlimentsRequestDTO alimentosRequestDTO) {
 
         // Cria um novo alimento
         Aliments alimentos = alimentosMapper.toEntity(alimentosRequestDTO);
 
         // Obtém a dieta
-        Dietas dieta = dietaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("A dieta com ID " + id + " não existe."));
+        Dietas dieta = dietaRepository.findById(alimentosRequestDTO.getIdDieta()).orElseThrow(() -> new IllegalArgumentException("A dieta com ID " + alimentosRequestDTO.getIdDieta() + " não existe."));
 
         // Adiciona o alimento à lista de alimentos da dieta
         dieta.getAlimentos().add(alimentos);

@@ -66,7 +66,7 @@ nav i{
 }
 
 nav a:hover{
-    background: #eee;
+    background: #eeeeee;
 }
 
 nav:hover{
@@ -103,7 +103,16 @@ nav:hover{
     margin-bottom: 10px;
 }
 
-.detalhes, .adicionar{
+.detalhes{
+    background:  rgb(25, 193, 199);
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: none;
+    border-radius: 10px;
+}
+
+.adicionar{
     background:  rgb(25, 199, 25);
     color: white;
     margin-left: 10px;

@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Criar Alimento</title>
 </head>
 <body>
-    <form th:action="@{/adm/alimento/criar/{id}}"  method="post">
+    <form th:action="@{/adm/criar-alimento}"  method="post">
     <input type="text" id="nome" name="nome" placeholder="Nome do alimento"
            class="form-control"/>
-    <input type="number" id="calorias" name="calorias" placeholder="Calorias"
+    <input type="number" step="0.010" id="calorias" name="calorias" placeholder="Calorias"
            class="form-control"/>
-    <input type="number" id="proteinas" name="proteinas" placeholder="Proteínas"
+    <input type="number" step="0.010" id="proteinas" name="proteinas" placeholder="Proteínas"
            class="form-control"/>
-    <input type="number" id="carboidratos" name="carboidratos" placeholder="Carboidratos"
+    <input type="number" step="0.010" id="carboidratos" name="carboidratos" placeholder="Carboidratos"
            class="form-control"/>
-    <input type="number" id="gorduras" name="gorduras" placeholder="Gorduras"
+    <input type="number" step="0.010" id="gorduras" name="gorduras" placeholder="Gorduras"
            class="form-control"/>
-    <input type="number" id="id" name="id" placeholder="id"
+    <input type="number" id="idDieta" name="idDieta" placeholder="idDieta"
            class="form-control"/>
     <button type="submit" class="add">Enviar</button>
   </form>

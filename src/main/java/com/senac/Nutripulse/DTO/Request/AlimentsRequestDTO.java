@@ -29,7 +29,8 @@ public class AlimentsRequestDTO {
     @Size(max = 10, message = "O campo 'gorduras' não pde ter mais que 10 caracteres")
     private double gorduras;
 
-
+    @NotBlank(message = "O campo 'idDieta' não pode estar vazio")
+    private Integer idDieta;
 
 
 }

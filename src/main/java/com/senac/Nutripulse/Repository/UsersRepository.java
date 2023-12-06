@@ -1,7 +1,6 @@
 package com.senac.Nutripulse.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 
 import com.senac.Nutripulse.Model.Users;
@@ -10,6 +9,6 @@ import com.senac.Nutripulse.Model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Integer> {
 
-    UserDetails findByEmail(String email);
+    Users findByEmail(String email);
     
 }

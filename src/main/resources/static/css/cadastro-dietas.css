@@ -66,6 +66,10 @@ form{
     margin: 5px;
 }
 
+.alimento textarea{
+    padding: 10px;
+}
+
 .submit{
     background:  rgb(25, 199, 25);
     color: white;

@@ -4,6 +4,9 @@ import com.senac.Nutripulse.DTO.Response.ExerciciosResponseDTO;
 import com.senac.Nutripulse.DTO.Response.TreinosResponseDTO;
 import com.senac.Nutripulse.Service.ExerciciosService;
 import com.senac.Nutripulse.Service.TreinosService;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,11 +34,15 @@ public class PagTreinosController {
     }
 
     @GetMapping("/{id}")
-    public String detalhesDieta(@PathVariable Integer id, Model model) {
+    public String detalhesTreinos(@PathVariable Integer id, Model model, HttpSession session) {
         TreinosResponseDTO treinosResponseDTO = treinosService.obterTreinoPorIdResponse(id);
         List<ExerciciosResponseDTO> exercicios = exerciciosService.listarExerciciosPorTreinos(id);
         model.addAttribute("treinos", treinosResponseDTO);
         model.addAttribute("exercicios", exercicios);
-        return "detalhes-treinos";
+        if(session != null){
+            return "detalhes-treinos-login";
+        } else {
+            return "detalhes-treinos";
+        }
     }
 }

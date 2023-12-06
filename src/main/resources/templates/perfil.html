@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <a class="navbar-brand" href="\"><img src="../img/logo.png" class="logo" alt="Logotipo"></a>
+      <div class="container-fluid">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-dietas">Dietas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-treinos">Treinos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="\perfil">Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<body>
+    <div class="container">
+        <h1 th:text="${session.usuarioLogado.nome}"></h1><br>
+        <div class="perfil">
+        <div class="divisao1">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.nome}">
+            <label for="nome">Email:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.email}">
+            <label for="nome">Cpf:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.cpf}">
+        </div>
+        <div class="divisao2">
+            <label for="nome">Altura:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.altura}">
+            <label for="nome">Peso:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.peso}">
+            <label for="nome">IMC:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.IMC}">
+            <label for="nome">IMC:</label>
+            <input type="text" id="nome" disabled th:value="${session.usuarioLogado.casoDietas}">
+        </div>
+        </div>
+    </div>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+      </script>
+</body>
+</html>

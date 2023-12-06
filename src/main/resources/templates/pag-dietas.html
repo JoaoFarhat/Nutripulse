@@ -5,6 +5,7 @@
     <title>Dietas</title>
     <link rel="stylesheet" href="..\css\dieta.css">
     <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
 <header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -33,13 +34,23 @@
   </nav>
 </header>
 <body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
   <div class="container">
     <div class="card" th:each="dietas : ${listaDietas}">
       <a th:href="@{/lista-dietas/{id}(id=${dietas.id})}">
         <img src="../img/dieta.jpg" alt="Imagem 1" class="dieta">
       </a>
-      <p th:text="${dietas.nome}"></p>
-      <p th:text="${dietas.caso}"></p>
+      <h2 th:text="${dietas.nome}"></h2>
+      <h2 th:text="${dietas.caso}"></h2>
       <td>
         <form th:action="@{/lista-dietas/{id}(id=${dietas.id})}" method="get">
           <input type="hidden" name="id" th:value="${dietas.id}" />

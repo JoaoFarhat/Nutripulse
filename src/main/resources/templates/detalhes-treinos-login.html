@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Treino</title>
+    <link rel="stylesheet" href="..\css\detalhes-treinos.css">
+    <link rel="stylesheet" href="..\css\style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <a class="navbar-brand" href="\"><img src="../img/logo.png" class="logo" alt="Logotipo"></a>
+      <div class="container-fluid">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-dietas">Dietas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\lista-treinos">Treinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="\perfil">Perfil</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<body>
+<div class="container-cards">
+    <div class="card">
+        <div class="colunas">
+            <div class="coluna1">
+                <a href="/adm/treinos">
+                    <i class="fas fa-arrow-left"></i> Voltar
+                  </a>
+                <img th:src="@{/img/treino.jpg}" alt="Imagem 1" class="imgtreino"><br>
+                <div class="text_treinos"><br>
+                    <h1 th:text="${treinos.nome}"></h1><br>
+                    <h1 th:text="${treinos.modo}"></h1><br>
+                    <p class="treinos_descricao" th:text="${treinos.descricao}"></p>
+                </div>
+            </div>
+            <div class="coluna2">
+                <h2 class="titulo_exercicios">Exercicios do Treino</h2>
+                <div class="container">
+                    <div class="lista_exercicios" th:each="exercicio : ${exercicios}">
+                        <div class="infos_exercicios">
+                            <h3 class="nome_exercicio" th:text="${exercicio.nome}"></h3><br>
+                            <span th:text="'Descrição:'"></span><h5 class="descricao_exercicio" th:text="${exercicio.descricao}"></h5>
+                            <span th:text="'Repetições:'"></span><h5 class="repeticoes_exercicio" th:text="${exercicio.repeticoes}"></h5>
+                            <span th:text="'Séries:'"></span><h5 class="series_exercicio" th:text="${exercicio.series}"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

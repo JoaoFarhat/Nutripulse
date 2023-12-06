@@ -2,6 +2,7 @@
 body{
     margin: 0;
     font-family: "Poppins", sans-serif;
+    width: 100%;
 }
 nav {
     background-color: #303030; /* Cor de fundo do menu de navegação */
@@ -62,10 +63,9 @@ nav {
 }
 
 .logo{
-  width: 13%;
-  height: auto;
+  width: 150px;
   position: absolute;
-  margin-top: -22px;
+  align-items: center;
 }
 
 footer {
@@ -78,7 +78,7 @@ footer {
 
 .banner1{
   
-  width: 110%;
+  width: 100%;
   height: auto;
   margin-top: auto;
   position: relative;
@@ -101,6 +101,7 @@ footer {
   backdrop-filter: blur(10px); /* Efeito de desfoque */
   box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
   padding: 20px;
+  margin-top: 40px;
 }
 
 .painel-text{
@@ -163,7 +164,7 @@ footer {
   font-size: 20px;
   padding: 20px;
   display: grid;
-  color: #303030;
+  color: #eee;
 }
 
 h3{
@@ -181,22 +182,30 @@ h3{
 }
 
 .info-principal{
-  width: 500;
+  width: 80vw;
   height: auto;
   background-color:#00e961;
   border-radius: 20px;
   box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin: 100px;
+  margin-bottom: 50px;
   font-size: 20px;
   padding: 30px;
-  display: inline-flex;
-  color: #303030;
+  display: flex;
+  justify-content: space-around;
+  color: #eee;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.info-principal h1{
+  font-size: 30px;
 }
 
 .info2{
   margin: 50px;
+  width: 33%;
+}
+
+.parag{
+  height: 20px;
 }
 
 .info2 h1{

@@ -56,6 +56,7 @@ public class TreinosService {
         Treinos treinos = new Treinos();
         treinos.setModo(treinosRequestDTO.getModo());
         treinos.setDescricao(treinosRequestDTO.getDescricao());
+        treinos.setNome(treinosRequestDTO.getNome());
 
         // Cria os exercicios da treino
         for (ExerciciosRequestDTO exerciciosRequestDTO : treinosRequestDTO.getExercicios()) {
@@ -112,6 +113,7 @@ public class TreinosService {
         // Atualiza os atributos da treino
         treinos.setModo(treinosRequestDTO.getModo());
         treinos.setDescricao(treinosRequestDTO.getDescricao());
+        treinos.setNome(treinosRequestDTO.getNome());
 
         // Salva a treino
         treinosRepository.save(treinos);

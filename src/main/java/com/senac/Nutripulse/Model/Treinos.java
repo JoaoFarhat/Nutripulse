@@ -19,6 +19,9 @@ public class Treinos{
     @Column(name = "treino_id")
     private long id;
 
+    @Column(name = "treino_nome", nullable = false, unique = false, length = 30)
+    private String nome;
+
     @Column(name = "treino_descricao", nullable = false, unique = false, length = 3000)
     private String descricao;
 

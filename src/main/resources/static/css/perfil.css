@@ -1,0 +1,52 @@
+h3{
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.perfil{
+    background-color:#00e961;
+    width: 70%;
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-between;
+   
+}
+
+.perfil label{
+    padding: 10px;
+    color: white;
+    width: 200px;
+    display: flex;
+}
+
+.perfil input{
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    background-color: white;
+}
+
+.divisao1, .divisao2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divisao2{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+h1{
+    font-size: 45px;
+    color: #00e961;
+}

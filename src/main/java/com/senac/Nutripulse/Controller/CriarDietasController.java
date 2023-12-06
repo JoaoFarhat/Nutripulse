@@ -16,7 +16,7 @@ public class CriarDietasController {
     DietaService dietaService;
 
     @GetMapping()
-    public String cricaoDietas() {
+    public String criacaoDietas() {
         return "criacao-dietas";
     }
 

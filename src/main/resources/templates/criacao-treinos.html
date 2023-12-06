@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Criar Treino</title>
+
+    <link rel="stylesheet" th:href="@{/css/cadastro-dietas.css}">
+</head>
+<body>
+    <div class="container">   
+        <form th:action="@{/adm/criacao-treinos}" method="post">
+            <div class="cont1">
+                <div class="radio">
+                    <input type="radio" id="INICIANTE" name="modo" value="INICIANTE">
+                    <label for="INICIANTE">INICIANTE</label><br>
+                    <input type="radio" id="INTERMEDIARIO" name="modo" value="INTERMEDIARIO">
+                    <label for="INTERMEDIARIO">INTERMEDIARIO</label><br>
+                    <input type="radio" id="AVANCADO" name="modo" value="AVANCADO ">
+                    <label for="AVANCADO">AVANCADO</label><br>
+                </div>
+                <div class="descricao">
+                    <input type="text" name="nome" placeholder="Nome do Treino">
+                    <textarea name="descricao" id="descricao" placeholder="Descrição do Treino" cols="30" rows="6"></textarea>
+                </div>
+            </div>
+            <div class="alimentos">
+        <div class="alimento">
+            <input type="text" name="exercicios[0].nome" placeholder="Nome do exercicio">
+            <input type="text" name="exercicios[0].descricao" placeholder="Descricao do exercicio">
+            <input type="number" name="exercicios[0].repeticoes" placeholder="Repetições">
+            <input type="number" name="exercicios[0].series" placeholder="Series">
+        </div>
+        <div class="alimento">
+            <input type="text" name="exercicios[1].nome" placeholder="Nome do exercicio">
+            <input type="text" name="exercicios[1].descricao" placeholder="Descricao do exercicio">
+            <input type="number" name="exercicios[1].repeticoes" placeholder="Repetições">
+            <input type="number" name="exercicios[1].series" placeholder="Series">
+        </div>
+        <div class="alimento">
+            <input type="text" name="exercicios[2].nome" placeholder="Nome do exercicio">
+            <input type="text" name="exercicios[2].descricao" placeholder="Descricao do exercicio">
+            <input type="number" name="exercicios[2].repeticoes" placeholder="Repetições">
+            <input type="number" name="exercicios[2].series" placeholder="Series">
+        </div>
+    </div>
+    <div class="but">
+        <button type="submit" class="submit" value="Criar Alimento">Salvar</button>
+    </div>
+</form>
+</div>
+
+</body>
+</html>

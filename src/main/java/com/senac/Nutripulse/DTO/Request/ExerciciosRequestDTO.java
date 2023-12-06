@@ -24,4 +24,7 @@ public class ExerciciosRequestDTO {
     @Size(max = 3, message = "O campo 'series' não pde ter mais que 3 caracteres")
     private int series;
 
+    @NotBlank(message = "O campo 'idTreino' não pode estar vazio")
+    private Integer idTreino;
+
 }

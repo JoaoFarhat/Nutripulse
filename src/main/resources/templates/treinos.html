@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Treinos</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="logo">
+                    <img src="..\img\logo.png" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="/adm/dietas">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span class="nav-item">Dietas</span></a>
+            </li>
+            <li>
+                <a href="/adm/treinos">
+                    <i class="fa-solid fa-dumbbell"></i>
+                    <span class="nav-item">Treinos</span></a>
+            </li>
+            <li>
+                <a href="/adm/criar-adm">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="nav-item">Administradores</span></a>
+            </li>
+            <li>
+                <a href="/" class="logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="nav-item">Logout</span></a>
+            </li>
+        </ul>
+    </nav>
+<div class="card">
+    <a href="/lista-treinos"></a>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Caso</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr th:each="treinos : ${listaTreinos}">
+            <td th:text="${treinos.id}"></td>
+            <td th:text="${treinos.nome}"></td>
+            <td th:text="${treinos.modo}"></td>
+            <td>
+                <a class="detalhes" href="btn btn-info btn-sm" th:href="@{/adm/treinos/detalhes/{id}(id=${treinos.id})}">Detalhes</a>
+            </td>
+            <td>
+                <a class="editar" href="btn btn-warning btn-sm" th:href="@{/adm/treinos/{id}(id=${treinos.id})}">Editar</a>
+            </td>
+            <td>
+                <a class="remover" href="btn btn-remove btn-sm" th:href="@{/adm/treinos/deletar/{id}(id=${treinos.id})}">Remover</a>
+            </td>
+        </tr>
+        
+    </table>
+    <div class="but">
+        <a href="/adm/criar-exercicio"><button id="adicionarCard" class="botao-adicionar">Criar Exercicio</button></a>
+        <a href="/adm/criacao-treinos"><button id="adicionarCard" class="botao-adicionar">Criar Novo Treino</button></a>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

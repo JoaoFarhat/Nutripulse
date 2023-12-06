@@ -1,38 +1,63 @@
 .formulario{
-    color: white;
-    width: 400px;
-    height: 900px;
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color:#00e961;
-    border-radius: 40px;
     backdrop-filter: blur(10px); /* Efeito de desfoque */
     box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    margin-top: 5%;
-    margin-left: 37%;
-    margin-bottom: 50px;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    }
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    font-size: 20px;
-    padding: 20px;
-    display: grid;
-    color: #303030;
-    font-family: "Poppins", sans-serif;
+    padding-top: 5vh;
 }
 
 label{
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: 25px;
 }
 
+h1{
+    color: white;
+}
+
 input{
-    outline: none;
     background-color: white;
     border: none;
-    padding: 13px;
     border-radius: 30px;
-    width: 300px;
+    padding-left: 10px;
+    width: 150px;
     margin: 10px;
     font-size: 20px;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+}
+
+.adicionar{
+    color:  rgb(25, 199, 25);
+    background-color: white;
+    border-radius: 10px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+    font-weight: bold;
 }

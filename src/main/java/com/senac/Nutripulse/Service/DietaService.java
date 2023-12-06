@@ -1,12 +1,5 @@
 package com.senac.Nutripulse.Service;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.senac.Nutripulse.DTO.Request.AlimentsRequestDTO;
 import com.senac.Nutripulse.DTO.Request.DietasRequestDTO;
 import com.senac.Nutripulse.DTO.Response.DietasResponseDTO;
@@ -14,8 +7,13 @@ import com.senac.Nutripulse.Mapper.DietasMapper;
 import com.senac.Nutripulse.Model.Aliments;
 import com.senac.Nutripulse.Model.Dietas;
 import com.senac.Nutripulse.Repository.DietaRepository;
-
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class DietaService {
@@ -117,6 +115,7 @@ public class DietaService {
         // Atualiza os atributos da dieta
         dietas.setCaso(dietasRequestDTO.getCaso());
         dietas.setDescricao(dietasRequestDTO.getDescricao());
+        dietas.setNome(dietasRequestDTO.getNome());
 
         // Salva a dieta
         dietasRepository.save(dietas);

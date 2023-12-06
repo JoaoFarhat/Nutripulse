@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dietas</title>
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 </head>
@@ -21,17 +21,17 @@
                     <span class="nav-item">Dietas</span></a>
             </li>
             <li>
-                <a href="/lista-treinos">
+                <a href="/adm/treinos">
                     <i class="fa-solid fa-dumbbell"></i>
                     <span class="nav-item">Treinos</span></a>
             </li>
             <li>
-                <a href="#">
+                <a href="/adm/criar-adm">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">Administradores</span></a>
             </li>
             <li>
-                <a href="#" class="logout">
+                <a href="/" class="logout">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="nav-item">Logout</span></a>
             </li>
@@ -62,15 +62,11 @@
             <td>
                 <a class="remover" href="btn btn-remove btn-sm" th:href="@{/adm/dietas/deletar/{id}(id=${dietas.id})}">Remover</a>
             </td>
-            <td>
-                <a class="adicionar" href="btn btn-remove btn-sm" th:href="@{/adm/alimento/criar/{id}(id=${dietas.id})}">Criar Alimento</a>
-            </td>
-
         </tr>
         
     </table>
     <div class="but">
-
+        <a href="/adm/criar-alimento"><button id="adicionarCard" class="botao-adicionar">Criar Alimento</button></a>
         <a href="/adm/criacao-dietas"><button id="adicionarCard" class="botao-adicionar">Criar Nova Dieta</button></a>
     </div>
 </div>

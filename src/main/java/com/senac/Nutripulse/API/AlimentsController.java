@@ -19,10 +19,9 @@ public class AlimentsController {
     private AlimentsService alimentsService;
 
     @PostMapping()
-    public ResponseEntity<AlimentsResponseDTO> criarAlimento(@RequestBody AlimentsRequestDTO alimentosRequestDTO,
-                                                             @RequestParam Integer id) {
+    public ResponseEntity<AlimentsResponseDTO> criarAlimento(@RequestBody AlimentsRequestDTO alimentosRequestDTO) {
 
-        AlimentsResponseDTO alimentos = alimentsService.criarAlimento(alimentosRequestDTO, id);
+        AlimentsResponseDTO alimentos = alimentsService.criarAlimento(alimentosRequestDTO);
 
         // Retorna o alimento criado
         return ResponseEntity.status(HttpStatus.CREATED).body(alimentos);

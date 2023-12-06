@@ -19,10 +19,9 @@ public class ExerciciosController {
     private ExerciciosService exerciciosService;
 
     @PostMapping()
-    public ResponseEntity<ExerciciosResponseDTO> criarExercicio(@RequestBody ExerciciosRequestDTO exerciciosRequestDTO,
-                                                                @RequestParam Integer id) {
+    public ResponseEntity<ExerciciosResponseDTO> criarExercicio(@RequestBody ExerciciosRequestDTO exerciciosRequestDTO) {
 
-        ExerciciosResponseDTO exercicios = exerciciosService.criarExericios(exerciciosRequestDTO, id);
+        ExerciciosResponseDTO exercicios = exerciciosService.criarExericios(exerciciosRequestDTO);
 
         // Retorna o alimento criado
         return ResponseEntity.status(HttpStatus.CREATED).body(exercicios);

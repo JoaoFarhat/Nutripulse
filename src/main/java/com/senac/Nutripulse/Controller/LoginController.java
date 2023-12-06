@@ -7,7 +7,6 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +20,9 @@ import com.senac.Nutripulse.DTO.Request.UsersRequestDTO;
 import com.senac.Nutripulse.DTO.Response.LoginResponseDTO;
 import com.senac.Nutripulse.Security.TokenService;
 
+import jakarta.servlet.http.HttpSession;
+
+import java.security.NoSuchAlgorithmException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -50,7 +52,7 @@ public class LoginController {
     }
 
     @PostMapping()
-    public ModelAndView logar(@ModelAttribute AuthenticationDTO dto) {
+    public ModelAndView logar(@ModelAttribute AuthenticationDTO dto, HttpSession session) throws NoSuchAlgorithmException {
         var userSenha = new UsernamePasswordAuthenticationToken(dto.email(), dto.senha());
 
         if (!userSenha.getPrincipal().equals(dto.email())) {
@@ -62,15 +64,17 @@ public class LoginController {
 
         new LoginResponseDTO(token);
 
-        UserDetails users = usersRepository.findByEmail(dto.email());
-        Set<String> authorities = users.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
+        Users usuario = usersRepository.findByEmail(dto.email());
+
+        Set<String> authorities = usuario.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
 
         if (authorities.contains("ROLE_ADMIN")) {
             // Redireciona para a rota dos administradores
-            ModelAndView modelAndView = new ModelAndView("redirect:/adm/criacao-dietas");
+            ModelAndView modelAndView = new ModelAndView("redirect:/adm/dietas");
             return modelAndView;
         } else if ((authorities.contains("ROLE_USER"))){
             // Redireciona para a rota dos usuários comuns
+            session.setAttribute("usuarioLogado", usuario);
             return new ModelAndView("redirect:/");
         } else {
             return new ModelAndView("redirect:/login");

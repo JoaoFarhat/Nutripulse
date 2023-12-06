@@ -7,9 +7,7 @@
   <link href="..\css\style.css" rel="stylesheet" type="text/css" />
   <title>NutriPulse</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-
-<body>
-
+<header>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <a class="navbar-brand" href="\"><img src="..\img\logo.png" class="logo" alt="Logotipo"></a>
     <div class="container-fluid">
@@ -34,14 +32,9 @@
       </div>
     </div>
   </nav>
+</header>
+<a><img src="..\img\banner.jpg" class="banner1" alt="banner"></a>
 
-  <a><img src="..\img\banner.jpg" class="banner1" alt="banner"></a>
-
-  <div class="painel">
-    <div class="painel-text">
-      VENHA CONHECER NOSSOS SERVIÇOS. <br>VEJA NOSSAS DIETAS E TREINOS CRIADOS ESPECIALMENTE PARA SEU CASO
-    </div>
-  </div>
 
   <div class="container text-center">
     <div class="row">
@@ -49,16 +42,28 @@
         <div class="info-principal">
           <div class="info2">
             <h1>Exclusivo e personalizado</h1>
-          Um plano alimentar que respeita sua rotina, seus gostos, seus hábitos e suas necessidades, exclusivo para você.<br> 
+            <div class="parag">
+              <p>
+                Um plano alimentar que respeita sua rotina, seus gostos, seus hábitos e suas necessidades, exclusivo para você.<br> 
+              </p>
+            </div>
           </div>
           <div class="info2">
             <h1>Para qualquer <br> lugar e perfil</h1>
-            Não importa onde você treina ou o seu nível de atividade física – você tem tudo o que precisa para atingir seu objetivo mais rápido.
+            <div class="parag">
+              <p>
+                Não importa onde você treina ou o seu nível de atividade física – você tem tudo o que precisa para atingir seu objetivo mais rápido.
+              </p>
+            </div>
           </div>
           <div class="info2">
             <h1>Seu corpo <br> sem segredos</h1>
-            Sua composição corporal é exibida em detalhes que você nunca viu. Assim, você, seu nutricionista e seu professor da 
-            academia acompanham a evolução do seu corpo e ajustam o treino e a alimentação.
+            <div class="parag">
+              <p>
+                Sua composição corporal é exibida em detalhes que você nunca viu. Assim, você, seu nutricionista e seu professor da 
+                academia acompanham a evolução do seu corpo e ajustam o treino e a alimentação.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -130,11 +135,26 @@
     <br>Somos mais do que uma simples academia; somos uma comunidade apaixonada dedicada a transformar vidas por meio da nutrição e do exercício.
     
   </div>
-
-  <footer>
-    <p>&copy; 2023 NutriPulse. Todos os direitos reservados.</p>
-  </footer>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  
+    <div class="painel">
+      <div class="painel-text">
+        VENHA CONHECER NOSSOS SERVIÇOS. <br>VEJA NOSSAS DIETAS E TREINOS CRIADOS ESPECIALMENTE PARA SEU CASO
+      </div>
+    </div>
 
 </body>
+<footer>
+  <p>&copy; 2023 NutriPulse. Todos os direitos reservados.</p>
+</footer>
 
 </html>

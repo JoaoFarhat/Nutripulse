@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Exercicio</title>
+</head>
+<body>
+    <form th:action="@{/adm/criar-exercicio}"  method="post">
+    <input type="text" id="nome" name="nome" placeholder="Nome do Exercicio"
+           class="form-control"/>
+    <input type="text" id="descricao" name="descricao" placeholder="Descrição"
+           class="form-control"/>
+    <input type="number" id="repeticoes" name="repeticoes" placeholder="Repetições"
+           class="form-control"/>
+    <input type="number" id="series" name="series" placeholder="Series"
+           class="form-control"/>
+    <input type="number" id="idTreino" name="idTreino" placeholder="idTreino"
+           class="form-control"/>
+    <button type="submit" class="add">Enviar</button>
+  </form>
+
+</body>
+</html>

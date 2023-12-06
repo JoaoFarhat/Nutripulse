@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Treino</title>
+  <link th:href="@{/css/index.css}" rel="stylesheet">
+  <link th:href="@{/css/detalhes-dietas-adm.css}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="#" class="logo">
+          <img th:src="@{/img/logo.png}" alt="">
+        </a>
+      </li>
+      <li>
+        <a href="/adm/dietas">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="nav-item">Dietas</span></a>
+      </li>
+      <li>
+        <a href="/adm/treinos">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span class="nav-item">Treinos</span></a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa-solid fa-user"></i>
+          <span class="nav-item">Administradores</span></a>
+      </li>
+      <li>
+        <a href="/" class="logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span class="nav-item">Logout</span></a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<body>
+<div class="container-cards">
+  <div class="card">
+    <div class="colunas">
+      <div class="coluna1">
+        <a href="/adm/treinos">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+        <div class="text_dietas"><br>
+          <h1 th:text="${treinos.modo}"></h1><br>
+          <h3 th:text="'Nome:'"></h3><p class="dieta_descricao" th:text="${treinos.nome}"></p>
+          <h3 th:text="'Descrição:'"></h3><p class="dieta_descricao" th:text="${treinos.descricao}"></p>
+        </div>
+      </div>
+      <div class="coluna2">
+        <h2 class="titulo_alimentos">Exercicios do Treino</h2>
+        <div class="container">
+          <div class="lista_alimentos" th:each="exercicio : ${exercicios}">
+            <div class="infos_alimentos">
+              <h3 class="nome_alimento" th:text="${exercicio.nome}"></h3><br>
+              <span th:text="'Descricao:'"></span> <h5 class="calorias_alimento" th:text="${exercicio.descricao}"></h5><br>
+              <span th:text="'Repeticoes:'"></span> <h5 class="proteinas_alimento" th:text="${exercicio.repeticoes}"></h5><br>
+              <span th:text="'series:'"></span> <h5 class="gorduras_alimento" th:text="${exercicio.series}"></h5><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

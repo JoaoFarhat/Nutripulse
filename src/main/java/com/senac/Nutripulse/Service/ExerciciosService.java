@@ -10,7 +10,6 @@ import com.senac.Nutripulse.Repository.TreinosRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,13 +26,13 @@ public class ExerciciosService {
     @Autowired
     private TreinosRepository treinosRepository;
 
-    public ExerciciosResponseDTO criarExericios(ExerciciosRequestDTO exerciciosRequestDTO, @RequestParam Integer id) {
+    public ExerciciosResponseDTO criarExericios(ExerciciosRequestDTO exerciciosRequestDTO) {
 
         // Cria um novo alimento
         Exercicios exercicios = exerciciosMapper.toEntity(exerciciosRequestDTO);
 
         // Obtém a treinos
-        Treinos treinos = treinosRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("A treinos com ID " + id + " não existe."));
+        Treinos treinos = treinosRepository.findById(exerciciosRequestDTO.getIdTreino()).orElseThrow(() -> new IllegalArgumentException("A treinos com ID " + exerciciosRequestDTO.getIdTreino() + " não existe."));
 
         // Adiciona o alimento à lista de exercicios da treinos
         treinos.getExercicios().add(exercicios);

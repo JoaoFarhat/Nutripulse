@@ -29,7 +29,7 @@ public class CadastroUsuarioController {
         return "cadastro";
     }
 
-    @PostMapping(consumes = "application/x-www-form-urlencoded;charset=UTF-8")
+    @PostMapping()
     public ModelAndView result(@ModelAttribute UsersRequestDTO usersRequestDto) {
         usersService.criarUsers(usersRequestDto);
         Logger.getLogger(this.getClass().getName()).log(Level.INFO, "Criando usuário com CPF: {0}", usersRequestDto.getCpf());

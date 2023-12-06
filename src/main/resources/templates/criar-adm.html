@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>Criar Admnistrador</title>
+</head>
+<header>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="logo">
+            <img th:src="@{/img/logo.png}" alt="">
+          </a>
+        </li>
+        <li>
+          <a href="/adm/dietas">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="nav-item">Dietas</span></a>
+        </li>
+        <li>
+          <a href="/adm/treinos">
+            <i class="fa-solid fa-dumbbell"></i>
+            <span class="nav-item">Treinos</span></a>
+        </li>
+        <li>
+          <a href="/adm/criar-adm">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-item">Administradores</span></a>
+        </li>
+        <li>
+          <a href="/" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">Logout</span></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    <div class="all">
+        <div class="formulario">
+          <form th:action="@{/adm/criar-adm}" th:object="${users}" id="userForm" class="form" method="post" enctype="multipart/form-data">
+            <h1>Login</h1>
+            <label class="label-input" for="email">
+              <i class="far fa-envelope icon-modify"></i>
+              <input type="email" id="email" placeholder="E-mail" th:field="*{email}" required>
+            </label>
+            <label class="label-input" for="senha">
+              <i class="fas fa-lock icon-modify"></i>
+              <input type="password" id="senha" placeholder="Senha" th:field="*{senha}" required>
+            </label>
+            <label class="label-input" for="role">
+                <i class="fas fa-lock icon-modify"></i>
+                ADMIN
+                <input type="radio" id="role" placeholder="Role" value="ADMIN" th:field="*{role}" required>
+              </label>
+            <button type="submit" class="adicionar">Inscrever-se</button>        
+          </form>
+        </div>
+        </div>
+    
+</body>
+</html>

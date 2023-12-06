@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.senac.Nutripulse.DTO.Request.UsersRequestDTO;
@@ -68,6 +69,9 @@ public class UsersService {
         public void criarUsers(UsersRequestDTO usersRequestDto) {
             try {
                 validarDadosDuplicadosSemId(usersRequestDto);
+                String encryptedPassword = new BCryptPasswordEncoder().encode(usersRequestDto.getSenha());
+                usersRequestDto.setSenha(encryptedPassword);
+                
                 Users users = usersMapper.toEntity(usersRequestDto);
                 calcularIMC(users);
                 colocarCaso(users);

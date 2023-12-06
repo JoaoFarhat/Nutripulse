@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Dietas</title>
+    <link rel="stylesheet" href="..\css\dieta.css">
+    <link rel="stylesheet" href="..\css\style.css">
+</head>
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <a class="navbar-brand" href="\"><img src="../img/logo.png" class="logo" alt="Logotipo"></a>
+    <div class="container-fluid">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\lista-dietas">Dietas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\lista-treinos">Treinos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="\perfil">Perfil</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <div class="container">
+    <div class="card" th:each="dietas : ${listaDietas}">
+      <a th:href="@{/lista-dietas/{id}(id=${dietas.id})}">
+        <img src="../img/dieta.jpg" alt="Imagem 1" class="dieta">
+      </a>
+      <h2 th:text="${dietas.nome}"></h2>
+      <h2 th:text="${dietas.caso}"></h2>
+      <td>
+        <form th:action="@{/lista-dietas/{id}(id=${dietas.id})}" method="get">
+          <input type="hidden" name="id" th:value="${dietas.id}" />
+          <button id="detalhe" type="submit">Detalhes</button>
+        </form>
+      </td>
+    </div>
+  </div>
+    
+</body>
+</html>

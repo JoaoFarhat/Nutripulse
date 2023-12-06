@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Dieta</title>
     <link th:href="@{/css/index.css}" rel="stylesheet">
     <link th:href="@{/css/detalhes-dietas-adm.css}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -16,12 +16,12 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/adm/treinos">
                     <i class="fa-solid fa-utensils"></i>
                     <span class="nav-item">Dietas</span></a>
             </li>
             <li>
-                <a href="#">
+                <a href="/adm/treinos">
                     <i class="fa-solid fa-dumbbell"></i>
                     <span class="nav-item">Treinos</span></a>
             </li>
@@ -31,7 +31,7 @@
                     <span class="nav-item">Administradores</span></a>
             </li>
             <li>
-                <a href="#" class="logout">
+                <a href="/" class="logout">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="nav-item">Logout</span></a>
             </li>
@@ -63,9 +63,6 @@
                             <span th:text="'Gorduras:'"></span> <h5 class="gorduras_alimento" th:text="${alimento.gorduras}"></h5><br>
                         </div>
                     </div>
-                </div>
-                <div class="but">
-                    <a th:href="@{/adm/alimento/criar/{id}(id=${dietas.id})}"><button id="adicionarCard" class="botao-adicionar">Criar Nova Alimento Para Esta Dieta</button></a>
                 </div>
             </div>
         </div>
